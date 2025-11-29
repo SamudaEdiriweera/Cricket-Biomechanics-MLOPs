@@ -21,8 +21,8 @@ def calculate_weight_balance(landmarks, is_right_handed=True):
     """
     # Use HEELS (29, 30) instead of ankles (27, 28) for better ground contact accuracy
     # Heels are closer to the ground and represent the 'back' of the foot better
-    left_heel_x = landmarks[27].x
-    right_heel_x = landmarks[28].x
+    left_heel_x = landmarks[29].x
+    right_heel_x = landmarks[30].x
     com_x, _ = get_center_of_mass(landmarks)
     
     # 1. Define Front and Back based on Handedness
@@ -87,4 +87,4 @@ def detect_handedness(landmarks):
     if dist_left < dist_right:
         return True # Right Handed
     else:
-        return False # Left Handed
+        return False # Left Handed 
