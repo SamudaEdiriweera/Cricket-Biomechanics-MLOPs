@@ -1,0 +1,44 @@
+name: Cricket AI CI
+
+# Trigger on push to main or any pull request
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Get the code from the repo
+      - uses: actions/checkout@v3
+      
+      # 2. Install Python 3.9
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      # 3. Install Libraries
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+          
+      # 4. Download Model
+      # We do this because large model files are usually ignored in .gitignore
+      # and not uploaded to GitHub. We need it to run the tests.
+      - name: Download Model
+        run: |
+          mkdir -p models
+          wget -O models/pose_landmarker_lite.task https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task
+
+      # 5. Run the Tests
+      # We verify that the logic works correctly
+      - name: Run Tests
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          pytest src/tests/
