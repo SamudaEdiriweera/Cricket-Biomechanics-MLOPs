@@ -63,7 +63,7 @@ Instead of manual input, we analyze the shoulder vectors relative to the screen 
 ### Method 1: Python (Direct)
 1.  **Clone the repo**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/cricket-biomechanics-mlops.git
+    git clone https://github.com/SamudaEdiriweera/Cricket-Biomechanics-MLOPsgit
     cd cricket-biomechanics-mlops
     ```
 
