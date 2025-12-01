@@ -12,6 +12,7 @@
 ## 🎥 Demo
 ![Demo Analysis](assets/demo.gif)
 *(The AI automatically detecting handedness, tracking the Center of Mass (Yellow Dot), and calculating weight transfer in real-time.)*
+<img width="1920" height="873" alt="Screenshot from 2025-12-01 19-06-41" src="https://github.com/user-attachments/assets/438b7a03-b95f-4df7-8ea1-bbd244f741ac" />
 
 ---
 
