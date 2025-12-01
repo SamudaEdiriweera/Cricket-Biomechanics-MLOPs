@@ -98,11 +98,11 @@ The Docker image is built on `python:3.9-slim` and includes all necessary OpenGL
 
 2.  **Run the API Server**
     ```bash
-    docker run -p 8000:8000 cricket-ai
+    docker run -p 800:8001 cricket-ai
     ```
 
 3.  **Test the API**
-    Go to `http://localhost:8000/docs` and use the Swagger UI to upload a video.
+    Go to `http://localhost:8001/docs` and use the Swagger UI to upload a video.
 
 ---
 
